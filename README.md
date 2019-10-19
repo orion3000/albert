@@ -1,4 +1,8 @@
-# Pre-Requisites
+# Albert case study
+
+[![Build Status](https://travis-ci.com/orion3000/albert.svg?branch=master)](https://travis-ci.com/orion3000/albert)
+
+### Pre-requisites
 
 Install python 3.7 or above on your machine:
 
