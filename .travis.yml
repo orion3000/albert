@@ -10,4 +10,5 @@ before_script: pip install docker-compose
 script:
   - docker-compose run ccvalidate sh -c "coverage run manage.py test && flake8"
 after_success:
+  - cat .coverage
   - coveralls
