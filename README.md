@@ -241,7 +241,7 @@ check_digit | optional for PUT
 You can send data by posting it as json in the request body. You must use Basic Auth with email and password set in 
 superuser command.
 
-#####GET all
+##### GET all
 ```shell script
 curl -X GET \
   http://127.0.0.1:8000/creditcard/ \
@@ -284,7 +284,7 @@ Content-Type: application/json
 ]
 ```
 
-#####GET id
+##### GET id
 ```shell script
 curl -X GET \
   http://127.0.0.1:8000/creditcard/4/ \
@@ -311,7 +311,7 @@ Content-Type: application/json
     "valid": true
 }
 ```
-#####POST
+##### POST
 
 ```shell
 curl -X POST \
@@ -343,7 +343,7 @@ Content-Type: application/json
 }
 ```
 
-#####PUT
+##### PUT
 ```shell script
 curl -X PUT \
   http://127.0.0.1:8000/creditcard/3/ \
@@ -373,7 +373,7 @@ Content-Type: application/json
 }
 ```
 
-#####DELETE
+##### DELETE
 ```shell script
 curl -X DELETE \
   http://127.0.0.1:8000/creditcard/4/ \
@@ -417,7 +417,7 @@ ccnumber | required for POST
 
 You can send data by posting it as json in the request body.
 
-#####POST
+##### POST
 ```shell script
 curl -X POST \
   http://127.0.0.1:8000/validatecard/ \
@@ -485,7 +485,7 @@ Valid network values
 
 You can send data by posting it as json in the request body.
 
-#####POST
+##### POST
 ```shell script
 curl -X POST \
   http://127.0.0.1:8000/validatecard/ \
