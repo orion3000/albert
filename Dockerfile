@@ -13,6 +13,7 @@ RUN apk del .tmp-build-deps
 RUN mkdir $PROJECT_ROOT
 WORKDIR $PROJECT_ROOT
 COPY .$PROJECT_ROOT $PROJECT_ROOT
+RUN chmod 666 $PROJECT_ROOT/.coverage
 
 RUN adduser -D user
 USER user
