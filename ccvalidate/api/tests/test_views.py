@@ -29,8 +29,9 @@ class ViewTestCase(TestCase):
         )
         self.creditcard_valid_data = {'ccnumber': '371559102252018'}
         self.valid_response_body = '{"ccnumber": "371559102252018", ' \
-            '"valid": true, "mii": "3", "mii_details": "Banking & ' \
-            'Financial (Visa, Switch, and Electron)", "iin": "371559' \
+            '"valid": true, "mii": "3", "mii_details": "Travel & ' \
+            'Entertainment (non-banks such as American Express, ' \
+            'Diner\'s Club, JCB, and Carte Blanche)", "iin": "371559' \
             '", "iin_details": "American Express", "pan": "10225201"' \
             ', "network": "American Express", "check_digit": "8"}'
         self.creditcard_invalid_data = {'ccnumber': '371559102252018a'}
