@@ -8,17 +8,17 @@ CC_DIGITS_MIN = 15
 CC_DIGITS_MAX = 19
 
 industries = {
-    "0": "Airlines (Diners Club enRoute)",
     "1": "Airlines (Diners Club enRoute)",
-    "2": "Travel & Entertainment (non-banks such as American Express, "
+    "2": "Airlines (Diners Club enRoute)",
+    "3": "Travel & Entertainment (non-banks such as American Express, "
          "Diner's Club, JCB, and Carte Blanche)",
-    "3": "Banking & Financial (Visa, Switch, and Electron)",
-    "4": "Banking & Financial (Mastercard and Bankcard)",
-    "5": "Merchandising & Finance (Discover Card, Laser, Solo, Switch,"
+    "4": "Banking & Financial (Visa, Switch, and Electron)",
+    "5": "Banking & Financial (Mastercard and Bankcard)",
+    "6": "Merchandising & Finance (Discover Card, Laser, Solo, Switch,"
          " and China UnionPay)",
-    "6": "Petroleum",
-    "7": "Telecommunications",
-    "8": "National Assignment",
+    "7": "Petroleum",
+    "8": "Telecommunications",
+    "9": "National Assignment",
     "": "Unknown"
 }
 
