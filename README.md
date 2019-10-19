@@ -1,6 +1,7 @@
 # Albert case study
 
 [![Build Status](https://travis-ci.com/orion3000/albert.svg?branch=master)](https://travis-ci.com/orion3000/albert)
+[![Coverage Status](https://coveralls.io/repos/github/orion3000/albert/badge.svg?branch=master)](https://coveralls.io/github/orion3000/albert?branch=master)
 
 ### Pre-requisites
 
@@ -507,7 +508,7 @@ Content-Type: application/json
     "ccnumber": "4076078604777059",
     "valid": true,
     "mii": "4",
-    "mii_details": "Banking & Financial (Mastercard and Bankcard)",
+    "mii_details": "Banking & Financial (Visa, Switch, and Electron)",
     "iin": "407607",
     "iin_details": "Visa",
     "pan": "860477705",
