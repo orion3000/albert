@@ -423,7 +423,7 @@ curl -X POST \
   http://127.0.0.1:8000/validatecard/ \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -d '{"network": "Visa"}'
+  -d '{"ccnumber": "371559102252018"}'
 ```
 Response
 ```shell script
