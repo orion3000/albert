@@ -492,7 +492,7 @@ You can send data by posting it as json in the request body.
 ##### POST
 ```shell script
 curl -X POST \
-  http://127.0.0.1:8000/validatecard/ \
+  http://127.0.0.1:8000/gencard/ \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
   -d '{"network": "Visa"}'

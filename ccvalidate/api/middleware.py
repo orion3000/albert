@@ -278,7 +278,10 @@ class ValidCardMiddleware:
                 return JsonResponse(response, safe=True, status=status)
             data = json.loads(request.body)
             ccnumber = data.get('ccnumber')
-
+            if ccnumber is None:
+                response = {"Error": "Invalid ccnumber"}
+                status = 400
+                return JsonResponse(response, safe=True, status=status)
             if len(ccnumber) < CC_DIGITS_MIN:
                 response = {
                     "Error": "Credit card number is not enough digits."
