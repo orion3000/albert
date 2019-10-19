@@ -85,6 +85,8 @@ Go to project directory, make migrations, migrate, and create superuser. *Mac us
 
     $ cd ccvalidate
     
+    $ sudo docker-compose build
+    
     $ sudo docker-compose run ccvalidate sh -c "python manage.py makemigrations api"
     
         Starting albert_db_1 ... done
