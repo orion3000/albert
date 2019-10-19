@@ -8,6 +8,6 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - sudo docker-compose run ccvalidate sh -c "coverage run --source='.' manage.py test && flake8"
+  - docker-compose run ccvalidate sh -c "coverage run manage.py test && flake8"
 after_success:
   - coveralls

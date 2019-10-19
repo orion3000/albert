@@ -14,6 +14,6 @@ RUN mkdir $PROJECT_ROOT
 WORKDIR $PROJECT_ROOT
 COPY .$PROJECT_ROOT $PROJECT_ROOT
 
-RUN adduser -D user
-USER user
+#RUN adduser -D user
+#USER user
 #CMD python manage.py runserver 0.0.0.0:8000
