@@ -138,7 +138,7 @@ Go to project directory, make migrations, migrate, and create superuser. *Mac us
 
 Run tests:
 
-    $ sudo docker-compose run ccvalidate sh -c "python manage.py test && flake8"
+    $ sudo docker-compose run ccvalidate sh -c "coverage run manage.py test && flake8 && coverage report"
         
     Starting albert_db_1 ... done
     Creating test database for alias 'default'...
@@ -158,6 +158,33 @@ Run tests:
 
     OK
     Destroying test database for alias 'default'...
+    Name                                     Stmts   Miss  Cover
+    ------------------------------------------------------------
+    api/__init__.py                              0      0   100%
+    api/admin.py                                10      0   100%
+    api/management/__init__.py                   0      0   100%
+    api/management/commands/__init__.py          0      0   100%
+    api/management/commands/wait_for_db.py      15      0   100%
+    api/middleware.py                          220     44    80%
+    api/migrations/0001_initial.py               8      0   100%
+    api/migrations/__init__.py                   0      0   100%
+    api/models.py                               37      0   100%
+    api/permissions.py                           7      1    86%
+    api/serializers.py                          19      3    84%
+    api/tests/__init__.py                        0      0   100%
+    api/tests/test_admin.py                     22      0   100%
+    api/tests/test_commands.py                  15      0   100%
+    api/tests/test_models.py                    36      0   100%
+    api/tests/test_views.py                     73      0   100%
+    api/urls.py                                  5      0   100%
+    api/views.py                                56      6    89%
+    ccvalidate/__init__.py                       0      0   100%
+    ccvalidate/settings.py                      20      0   100%
+    ccvalidate/urls.py                           4      0   100%
+    manage.py                                   12      2    83%
+    ------------------------------------------------------------
+    TOTAL                                      559     56    90%
+
 
 
     
