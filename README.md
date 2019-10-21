@@ -80,6 +80,7 @@ as db.
     │   └── manage.py
     ├── docker-compose.yml
     ├── Dockerfile
+    ├── LICENSE
     ├── README.md
     └── requirements.txt
   
@@ -309,7 +310,7 @@ Content-Type: application/json
         "iin": "481588",
         "iin_details": "Visa",
         "pan": "0016564363",
-        "network": "NewNetwork2",
+        "network": "NewNetwork",
         "check_digit": "3",
         "valid": true
     }
@@ -543,3 +544,7 @@ Content-Type: application/json
     "check_digit": "9"
 }
 ```
+
+## Copyright and license
+### BSD 3-Clause License
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)	
