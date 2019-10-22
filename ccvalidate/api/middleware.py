@@ -166,7 +166,7 @@ def check_digit_set(card):
     return card[-1:]
 
 
-def luhn(ccnumber):
+def luhn(cc_number):
     # this function was pretty easy when you use the whole cc number
     # instead of just the personal account number...Doh!
     # mapping of digit doubled and then digits are added together #
@@ -182,9 +182,9 @@ def luhn(ccnumber):
         '8': 7,
         '9': 9
     }
-    card_end = len(ccnumber) - 1
-    number_no_check = ccnumber[:card_end]
-    check = ccnumber[-1:]
+    card_end = len(cc_number) - 1
+    number_no_check = cc_number[:card_end]
+    check = cc_number[-1:]
     # Start from right side of digits
     odd_digits = number_no_check[-1::-2]
     even_digits = number_no_check[-2::-2]
@@ -277,38 +277,38 @@ class ValidCardMiddleware:
                 status = 400
                 return JsonResponse(response, safe=True, status=status)
             data = json.loads(request.body)
-            ccnumber = data.get('ccnumber')
-            if ccnumber is None:
-                response = {"Error": "Invalid ccnumber"}
+            cc_number = data.get('cc_number')
+            if cc_number is None:
+                response = {"Error": "Invalid cc_number"}
                 status = 400
                 return JsonResponse(response, safe=True, status=status)
-            if len(ccnumber) < CC_DIGITS_MIN:
+            if len(cc_number) < CC_DIGITS_MIN:
                 response = {
                     "Error": "Credit card number is not enough digits."
                 }
                 status = 400
                 return JsonResponse(response, safe=True, status=status)
-            if len(ccnumber) > CC_DIGITS_MAX:
+            if len(cc_number) > CC_DIGITS_MAX:
                 response = {
                     "Error": "Credit card number is too many digits."
                 }
                 status = 400
                 return JsonResponse(response, safe=True, status=status)
-            if not ccnumber.isdigit():
+            if not cc_number.isdigit():
                 response = {
                     "Error": "Credit card number is not only digits."
                 }
                 status = 400
                 return JsonResponse(response, safe=True, status=status)
 
-            mii = mii_set(ccnumber)
-            mii_details = mii_details_set(ccnumber)
-            iin = iin_set(ccnumber)
-            iin_details = iin_details_set(ccnumber)
-            pan = pan_set(ccnumber)
+            mii = mii_set(cc_number)
+            mii_details = mii_details_set(cc_number)
+            iin = iin_set(cc_number)
+            iin_details = iin_details_set(cc_number)
+            pan = pan_set(cc_number)
             network = iin_details
-            check_digit = check_digit_set(ccnumber)
-            valid = is_valid_check(ccnumber)
+            check_digit = check_digit_set(cc_number)
+            valid = is_valid_check(cc_number)
             # Populate request data for body
             data['valid'] = valid
             data['mii'] = mii
@@ -353,16 +353,16 @@ class ValidCardMiddleware:
                 new_card = new_card + str(random.randint(0, 9))
 
             check_digit = create_check_digit(new_card)
-            ccnumber = new_card + check_digit
-            mii = mii_set(ccnumber)
-            mii_details = mii_details_set(ccnumber)
-            iin = iin_set(ccnumber)
-            iin_details = iin_details_set(ccnumber)
-            pan = pan_set(ccnumber)
+            cc_number = new_card + check_digit
+            mii = mii_set(cc_number)
+            mii_details = mii_details_set(cc_number)
+            iin = iin_set(cc_number)
+            iin_details = iin_details_set(cc_number)
+            pan = pan_set(cc_number)
             network = iin_details
-            valid = is_valid_check(ccnumber)
+            valid = is_valid_check(cc_number)
             data = {
-                "ccnumber": ccnumber, "valid": valid, 'mii': mii,
+                "cc_number": cc_number, "valid": valid, 'mii': mii,
                 'mii_details': mii_details, 'iin': iin,
                 'iin_details': iin_details, 'pan': pan,
                 'network': network, 'check_digit': check_digit

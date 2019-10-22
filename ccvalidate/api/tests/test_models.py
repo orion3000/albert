@@ -22,7 +22,7 @@ class ModelTestCase(TestCase):
         self.iin_details = 'American Express'
         self.check_digit = '8'
         self.creditcard = models.Creditcard(
-            ccnumber=self.creditcard_number,
+            cc_number=self.creditcard_number,
             owner=user
         )
 

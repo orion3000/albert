@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
             name='Creditcard',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ccnumber', models.CharField(max_length=19, validators=[django.core.validators.MinLengthValidator(15)])),
+                ('cc_number', models.CharField(max_length=19, validators=[django.core.validators.MinLengthValidator(15)])),
                 ('mii', models.CharField(blank=True, max_length=1, validators=[django.core.validators.MinLengthValidator(1)])),
                 ('mii_details', models.CharField(blank=True, max_length=255)),
                 ('iin', models.CharField(blank=True, max_length=6, validators=[django.core.validators.MinLengthValidator(6)])),

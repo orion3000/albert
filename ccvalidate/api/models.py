@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Creditcard(models.Model):
     """This class represents the creditcard model."""
-    ccnumber = models.CharField(
+    cc_number = models.CharField(
         validators=[MinLengthValidator(15)],
         max_length=19,
         blank=False,
@@ -86,4 +86,4 @@ class Creditcard(models.Model):
 
     def __str__(self):
         """Return a human readable representation of model instance"""
-        return "{}".format(self.ccnumber)
+        return "{}".format(self.cc_number)

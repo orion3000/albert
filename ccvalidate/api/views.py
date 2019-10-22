@@ -39,8 +39,8 @@ class ValidCard(APIView):
 
         try:
             data = json.loads(request.body)
-            # Get ccnumber
-            ccnumber = data.get('ccnumber')
+            # Get cc_number
+            cc_number = data.get('cc_number')
             mii = data.get('mii')
             mii_details = data.get('mii_details')
             iin = data.get('iin')
@@ -50,7 +50,7 @@ class ValidCard(APIView):
             check_digit = data.get('check_digit')
             valid = data.get('valid')
             response = {
-                'ccnumber': ccnumber,
+                'cc_number': cc_number,
                 'valid': valid,
                 'mii': mii,
                 'mii_details': mii_details,
@@ -79,8 +79,8 @@ class GenerateCard(APIView):
 
         try:
             data = json.loads(request.body)
-            # Get ccnumber
-            ccnumber = data.get('ccnumber')
+            # Get cc_number
+            cc_number = data.get('cc_number')
             mii = data.get('mii')
             mii_details = data.get('mii_details')
             iin = data.get('iin')
@@ -89,7 +89,7 @@ class GenerateCard(APIView):
             network = iin_details
             check_digit = data.get('check_digit')
             valid = data.get('valid')
-            response = {'ccnumber': ccnumber,
+            response = {'cc_number': cc_number,
                         'valid': valid,
                         'mii': mii,
                         'mii_details': mii_details,

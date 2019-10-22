@@ -212,7 +212,7 @@ the api will return the following fields:
 
 id - The record id
 
-ccnumber - The credit card number
+cc_number - The credit card number
 
 email - The users email
  
@@ -260,7 +260,7 @@ id | the id associated with the credit card record (optional)
 
 Parameter | Description
 --------- | ----------- 
-ccnumber | required for PUT, POST
+cc_number | required for PUT, POST
 mii | optional for PUT
 mii_details | optional for PUT
 iin | optional for PUT
@@ -290,7 +290,7 @@ Content-Type: application/json
 [
     {
         "id": 2,
-        "ccnumber": "371559102252018",
+        "cc_number": "371559102252018",
         "email": "admin@example.com",
         "mii": "3",
         "mii_details": "Banking & Financial (Visa, Switch, and Electron)",
@@ -303,7 +303,7 @@ Content-Type: application/json
     },
     {
         "id": 3,
-        "ccnumber": "4815880016564363",
+        "cc_number": "4815880016564363",
         "email": "admin@example.com",
         "mii": "4",
         "mii_details": "Banking & Financial (Visa, Switch, and Electron)",
@@ -332,7 +332,7 @@ Content-Type: application/json
 ```json
 {
     "id": 4,
-    "ccnumber": "371559102252018",
+    "cc_number": "371559102252018",
     "email": "admin@example.com",
     "mii": "3",
     "mii_details": "Banking & Financial (Visa, Switch, and Electron)",
@@ -352,7 +352,7 @@ curl -X POST \
   -H 'Authorization: Basic YWRtaW5AZXhhbXBsZS5jb206YWRtaW5wYXNz' \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -d '{"ccnumber": "371559102252018"}'
+  -d '{"cc_number": "371559102252018"}'
 ```
 
 Response
@@ -363,7 +363,7 @@ Content-Type: application/json
 ```json
 {
    "id":1,
-   "ccnumber":"371559102252018",
+   "cc_number":"371559102252018",
    "email":"admin@example.com",
    "mii":"3",
    "mii_details":"Banking & Financial (Visa, Switch, and Electron)",
@@ -383,7 +383,7 @@ curl -X PUT \
   -H 'Authorization: Basic YWRtaW5AZXhhbXBsZS5jb206YWRtaW5wYXNz' \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -d '{"network": "NewNetwork", "ccnumber": "371559102252018"}'
+  -d '{"network": "NewNetwork", "cc_number": "371559102252018"}'
 ```       
 Response
 ```shell script
@@ -393,7 +393,7 @@ Content-Type: application/json
 ```json
 {
     "id": 3,
-    "ccnumber": "371559102252018",
+    "cc_number": "371559102252018",
     "email": "admin@example.com",
     "mii": "3",
     "mii_details": "Banking & Financial (Visa, Switch, and Electron)",
@@ -422,7 +422,7 @@ Content-Length: 0
 
 
 ## validatecard
-This endpoint lets you POST a credit card number in a json payload in the 'ccnumber' field without authorization.
+This endpoint lets you POST a credit card number in a json payload in the 'cc_number' field without authorization.
 
 #### HTTP Request
 
@@ -444,7 +444,7 @@ Code | Description
 
 Parameter | Description
 --------- | ----------- 
-ccnumber | required for POST
+cc_number | required for POST
 
 #### Sending data
 
@@ -456,7 +456,7 @@ curl -X POST \
   http://127.0.0.1:8000/validatecard/ \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -d '{"ccnumber": "371559102252018"}'
+  -d '{"cc_number": "371559102252018"}'
 ```
 Response
 ```shell script
@@ -465,7 +465,7 @@ Content-Type: application/json
 ```
 ```json
 {
-    "ccnumber": "371559102252018",
+    "cc_number": "371559102252018",
     "valid": true,
     "mii": "3",
     "mii_details": "Banking & Financial (Visa, Switch, and Electron)",
@@ -533,7 +533,7 @@ Content-Type: application/json
 ```
 ```json
 {
-    "ccnumber": "4076078604777059",
+    "cc_number": "4076078604777059",
     "valid": true,
     "mii": "4",
     "mii_details": "Banking & Financial (Visa, Switch, and Electron)",

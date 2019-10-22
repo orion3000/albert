@@ -19,7 +19,7 @@ class ViewTestCase(TestCase):
         )
         self.client = APIClient()
         self.client.force_authenticate(user=user)
-        self.creditcard_data = {'ccnumber': '371559102252018',
+        self.creditcard_data = {'cc_number': '371559102252018',
                                 'owner': user.id
                                 }
         self.response = self.client.post(
@@ -27,20 +27,20 @@ class ViewTestCase(TestCase):
             self.creditcard_data,
             format="json"
         )
-        self.creditcard_valid_data = {'ccnumber': '371559102252018'}
-        self.valid_response_body = '{"ccnumber": "371559102252018", ' \
+        self.creditcard_valid_data = {'cc_number': '371559102252018'}
+        self.valid_response_body = '{"cc_number": "371559102252018", ' \
             '"valid": true, "mii": "3", "mii_details": "Travel & ' \
             'Entertainment (non-banks such as American Express, ' \
             'Diner\'s Club, JCB, and Carte Blanche)", "iin": "371559' \
             '", "iin_details": "American Express", "pan": "10225201"' \
             ', "network": "American Express", "check_digit": "8"}'
-        self.creditcard_invalid_data = {'ccnumber': '371559102252018a'}
+        self.creditcard_invalid_data = {'cc_number': '371559102252018a'}
         self.invalid_response_body = '{"Error": "Credit card number is ' \
                                      'not only digits."}'
-        self.creditcard_short_data = {'ccnumber': '37155910'}
+        self.creditcard_short_data = {'cc_number': '37155910'}
         self.short_response_body = '{"Error": "Credit card number is not ' \
                                    'enough digits."}'
-        self.creditcard_long_data = {'ccnumber': '37155910225201899999999'}
+        self.creditcard_long_data = {'cc_number': '37155910225201899999999'}
         self.long_response_body = '{"Error": "Credit card number is too ' \
                                   'many digits."}'
         self.network_valid_data = {'network': 'Visa'}
@@ -88,7 +88,7 @@ class ViewTestCase(TestCase):
     def test_api_can_update_creditcard(self):
         """Test the api can update a given creditcard."""
         creditcard = models.Creditcard.objects.get()
-        change_creditcard = {"ccnumber": "371559102252018"}
+        change_creditcard = {"cc_number": "371559102252018"}
         response = self.client.put(
             reverse('details', kwargs={'pk': creditcard.id}),
             change_creditcard, format='json'
