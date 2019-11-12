@@ -44,10 +44,10 @@ Install Docker:
 
 # Project structure
 
-Created one api app with startapp.  If this was more a more extensive api with more models would have used a core app
+Created one api app with startapp.  If this was a more extensive api with more models I would have used a core app
 and added additional apps like user, card, etc, etc.
 Used json for default renderers and parsers.  Included docker and docker compose files to allow for locally using posgres
-as db. 
+as db.  Travis CI is setup with the `.travis.yml` file.
 
     ├── ccvalidate
     │   ├── api
@@ -78,6 +78,7 @@ as db.
     │   │   ├── urls.py
     │   │   └── wsgi.py
     │   └── manage.py
+    ├── .travis.yml    
     ├── docker-compose.yml
     ├── Dockerfile
     ├── LICENSE
