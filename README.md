@@ -46,7 +46,7 @@ Install Docker:
 
 Created one api app with startapp.  If this was a more extensive api with more models I would have used a core app
 and added additional apps like user, card, etc, etc.
-Used json for default renderers and parsers.  Included docker and docker compose files to allow for locally using posgres
+Used json for default renderers and parsers.  Included docker and docker compose files to allow for locally using postgres
 as db.  Travis CI is setup with the `.travis.yml` file.
 
     ├── ccvalidate
