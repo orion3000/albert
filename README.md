@@ -88,10 +88,8 @@ as db.  Travis CI is setup with the `.travis.yml` file.
 
 # Run api locally
 
-Go to project directory, make migrations, migrate, and create superuser. *Mac users might not need sudo
+Build container, make migrations, migrate, and create superuser. *Mac users might not need sudo
 
-    $ cd ccvalidate
-    
     $ sudo docker-compose build
     
     $ sudo docker-compose run ccvalidate sh -c "python manage.py makemigrations api"
